@@ -57,7 +57,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/notifier.ts", "~/plugins/axios.ts"],
+  plugins: [
+    "~/plugins/notifier.ts",
+    "~/plugins/axios.ts",
+    "~/plugins/vuetify.ts",
+  ],
 
   /*
    ** Nuxt.js modules
@@ -68,6 +72,8 @@ export default {
     // Doc: https://github.com/bootstrap-vue/bootstrap-vue
     "bootstrap-vue/nuxt",
   ],
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: ["@nuxtjs/vuetify"],
   /*
    ** Axios module configuration
    */
@@ -75,6 +81,7 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: "/",
   },
+  ssr: true,
 
   /*
    ** Style resources configuration

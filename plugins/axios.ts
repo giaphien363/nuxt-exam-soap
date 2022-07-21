@@ -1,17 +1,15 @@
-import { initializeAxios } from "../utils/axios";
-
-export default function ({ $axios, redirect }: any) {
+export default function ({ $axios, redirect }) {
   $axios.defaults.baseURL = "https://localhost:8000";
   $axios.interceptors.request.use(
-    (config: any) => {
+    (config) => {
       config.headers.common.Accept = "application/json";
       return config;
     },
-    (error: any) => {
+    (error) => {
       return Promise.reject(error);
     }
   );
-  $axios.onError((error: any) => {
+  $axios.onError((error) => {
     if (error.response.status === 500) {
       redirect("/page404");
     } else if (error.response.status === 400) {
@@ -20,7 +18,4 @@ export default function ({ $axios, redirect }: any) {
       redirect("/login");
     }
   });
-
-  // for get type axios instance, this code should be end of function
-  initializeAxios($axios);
 }

@@ -18,6 +18,7 @@
       <AppAside />
     </div>
     <AppFooter />
+    <Snackbar></Snackbar>
   </div>
 </template>
 
@@ -29,6 +30,7 @@ import {
   Aside as AppAside,
   Footer as AppFooter,
   Breadcrumb,
+  Snackbar,
 } from "~/components/";
 
 export default {
@@ -39,6 +41,7 @@ export default {
     AppAside,
     AppFooter,
     Breadcrumb,
+    Snackbar,
   },
   data() {
     return {
