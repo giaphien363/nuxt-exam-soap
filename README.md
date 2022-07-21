@@ -1,0 +1,1 @@
+# this project followed this [link](https://github.com/muhibbudins/nuxt-coreui)
