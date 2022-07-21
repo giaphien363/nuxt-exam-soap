@@ -50,11 +50,14 @@ export default {
     "~/node_modules/bootstrap-vue/dist/bootstrap-vue.css",
     { src: "~/assets/scss/style.scss", lang: "scss" },
   ],
+  dir: {
+    pages: "pages",
+  },
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/notifier.ts", "~/plugins/axios.ts"],
 
   /*
    ** Nuxt.js modules
@@ -69,7 +72,8 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: "/",
   },
 
   /*
